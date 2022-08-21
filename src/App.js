@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import { Header } from "./components/index";
+import { Header, Events, Footer } from "./components/index";
 
 function App({ hideLoader }) {
   useEffect(() => {
@@ -9,7 +9,8 @@ function App({ hideLoader }) {
   return (
     <div className="main-div">
       <Header />
-      <div className="body"></div>
+      <Events />
+      <Footer />
     </div>
   );
 }
