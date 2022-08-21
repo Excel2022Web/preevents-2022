@@ -1,9 +1,15 @@
-import './App.css';
+import React, { useEffect } from "react";
+import "./App.css";
+import { Header } from "./components/index";
 
-function App() {
+function App({ hideLoader }) {
+  useEffect(() => {
+    hideLoader();
+  });
   return (
-    <div className="App">
-      <h1>Preevents Website</h1>
+    <div className="main-div">
+      <Header />
+      <div className="body"></div>
     </div>
   );
 }

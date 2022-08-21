@@ -1,0 +1,35 @@
+.header{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(32.47% 7.68% at 50% 2.35%, rgba(238, 240, 241, 0.38) 0%, rgba(10, 126, 162, 0.38) 100%), linear-gradient(180deg, #56D0B5 0%, #037DA9 19.06%);
+}
+svg{
+    width: 150%;
+    height: 150%;
+    
+
+}
+/* .svg-div{
+    height: 100%;
+    width: 100%;
+} */
+.text-div h2{
+    position: absolute;
+left: 6.16%;
+right: 45.46%;
+top: 4.29%;
+bottom: 93.52%;
+
+font-family: 'League Spartan', sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 96px;
+line-height: 108px;
+/* identical to box height */
+
+
+color: #F5F5F5;
+}
