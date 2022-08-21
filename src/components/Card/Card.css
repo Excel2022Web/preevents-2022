@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap');
+
+.event__card {
+ 
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: #ffff;
+    padding: 1.5rem;
+    border-radius: 20px;
+}
+
+.eventcard__image {
+    border-radius: 10px;
+    flex: 0.15;
+}
+
+.eventcard__image > img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.eventcard__desc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex: 0.65;
+    height: 100%;
+}
+
+.eventcard__title {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.desc__title {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.desc__badge {
+    background-color: #F03E3E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+}
+
+.desc__badge > p {
+    font-family: 'Poppins';
+    font-size: 1rem;
+    color: #ffff;
+    margin-bottom: 0rem !important;
+}
+.eventcard__para {
+    width: 90%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    flex-wrap: wrap;
+}
+
+.eventcard__tags {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.event__tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    background-color: #D9D9D9;
+    padding: 0.35rem 0.5rem;
+    border-radius: 10px;
+}
+
+.event__tag > p {
+    margin-bottom: 0rem !important;
+}
+
+
+.eventcard__details {
+    flex: 0.2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    justify-content: space-evenly;
+}
+
+.event__detail {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+}
+
+.event__detail > p {
+    font-family: 'Poppins';
+    font-size: 1rem;
+    margin-bottom: 0rem !important;
+}
+
+.detail__icon {
+    font-size: 1.5rem;
+}
