@@ -1,0 +1,9 @@
+.events {
+ 
+    width: 100%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: radial-gradient(32.47% 7.68% at 50% 2.35%, rgba(238, 240, 241, 0.38) 0%, rgba(10, 126, 162, 0.38) 100%), linear-gradient(180deg, #56D0B5 0%, #037DA9 19.06%);
+}
