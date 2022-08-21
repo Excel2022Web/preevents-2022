@@ -11,7 +11,8 @@ import { BiCoinStack } from 'react-icons/bi'
 
 function Card() {
   return (
-    <div className='event__card'>
+    <div className='card__outer'>
+      <div className='event__card'>
        <div className='eventcard__image'>
         <img src="https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg" alt=" " />
        </div>
@@ -51,6 +52,8 @@ function Card() {
         </div>
        </div>
     </div>
+    </div>
+    
   )
 }
 
