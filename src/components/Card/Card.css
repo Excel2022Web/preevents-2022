@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap');
 
+.card__outer {
+    border-left: 8px solid #F03E3E;
+    border-radius: 25px;
+}
 .event__card {
  
     width: 100%;
@@ -14,7 +18,7 @@
 
 .eventcard__image {
     border-radius: 10px;
-    flex: 0.15;
+    flex: 0.2;
 }
 
 .eventcard__image > img {
