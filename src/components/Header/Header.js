@@ -10,6 +10,11 @@ const Header = () => {
     <div className="header">
       <div className="text-div">
         <h2>Excel 2022</h2>
+        <p>
+          Excel is the techno-managerial symposium of Govt.Model Engineering
+          College,Kochi.With several competitions,workshops and talks,it is
+          rendezvous of technology and fun
+        </p>
       </div>
       <img src={bg} alt="" />
     </div>
