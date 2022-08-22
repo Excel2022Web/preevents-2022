@@ -17,6 +17,7 @@ const Header = () => {
         </p>
       </div>
       <img src={bg} alt="" />
+    
     </div>
   );
 };
