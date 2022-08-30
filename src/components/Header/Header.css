@@ -37,4 +37,25 @@ color: #F5F5F5;
     color: #F5F5F5;
 }
 
+@media (max-width:400px){
+    .Header-text{
+        height: 20rem;
+        overflow-y: scroll;
+        width: 10rem;
+    }
+    
+}
+@media(max-width:650px){
 
+.Header-text {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    height: 12rem;
+    overflow: scroll;
+}
+.Header-text::-webkit-scrollbar { 
+    height: 12rem;
+    overflow: scroll;
+    display: none;  /* Safari and Chrome */
+}
+}
