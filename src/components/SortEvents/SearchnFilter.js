@@ -153,13 +153,13 @@ function SearchnFilter({ data, setdata }) {
             >
               Ended
             </p>
-            <p
+            {/* <p
               className="Events-headerp"
               onClick={() => sethighlightvalue("Filter")}
               id={highlightvalue === "Filter" ? "Events-selected" : ""}
             >
               Filter
-            </p>
+            </p> */}
           </div>
           <div className="Events-searchbox">
             <input
