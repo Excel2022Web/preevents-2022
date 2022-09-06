@@ -14,9 +14,13 @@ const Events = () => {
     <div>
       <SearchnFilter data={data} setdata={setdata}></SearchnFilter>
       <div className="events">
-        {data.map((itm) => {
-          return <Card {...itm} />;
-        })}
+        {data === [] ? (
+          <p>No data</p>
+        ) : (
+          data.map((itm) => {
+            return <Card {...itm} />;
+          })
+        )}
       </div>
     </div>
   );
