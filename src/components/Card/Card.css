@@ -149,14 +149,13 @@
 }
 
 @media screen and (max-width: 800px) {
+    .eventcard__desc {
+        flex: 0.5;
+    }
 
 }
 
 @media screen and (max-width: 600px) {
-
-}
-
-@media screen and (max-width: 400px) {
     .event__card {
         display: flex;
         flex-direction: column;
@@ -187,5 +186,9 @@
     .eventcard__details {
         gap: 0.65rem;
     }
+}
+
+@media screen and (max-width: 400px) {
+    
 
 }
