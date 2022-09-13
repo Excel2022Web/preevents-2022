@@ -25,6 +25,7 @@ function SearchnFilter({ data, setdata }) {
           var currDate = new Date();
           return currDate < eventDate;
         });
+        console.log(newData);
         break;
       case "Ongoing":
         newData = Data.filter((d) => {
@@ -43,6 +44,12 @@ function SearchnFilter({ data, setdata }) {
           var currDate = new Date();
           return currDate > eventDate;
         });
+        break;
+      case "inPerson":
+        newData = Data.filter((d)=> d.location==="In-Person")
+        break;
+      case "online":
+        newData = Data.filter((d)=>d.location==="online")
         break;
       default:
         newData = [];
@@ -111,13 +118,29 @@ function SearchnFilter({ data, setdata }) {
           >
             Ended
           </p>
-          {/* <p
-            className="Events-headerp"
-            onClick={() => sethighlightvalue("Filter")}
-            id={highlightvalue === "Filter" ? "Events-selected" : ""}
-          >
-            Filter
-          </p> */}
+          <div className="location-filter">
+            <p style={{ fontWeight: "700", color: "black" }}>Location</p>
+            <p
+              className="lcfilters"
+              onClick={() => {
+                sethighlightvalue("inPerson");
+                changeFilter("inPerson");
+              }}
+              id={highlightvalue === "inPerson" ? "Events-selected" : ""}
+            >
+              In-Person
+            </p>
+            <p
+              className="lcfilters"
+              onClick={() => {
+                sethighlightvalue("online");
+                changeFilter("online");
+              }}
+              id={highlightvalue === "online" ? "Events-selected" : ""}
+            >
+              Online
+            </p>
+          </div>
         </div>
       ) : (
         <div className="SearchnFilter-mobileview">
@@ -153,13 +176,14 @@ function SearchnFilter({ data, setdata }) {
             >
               Ended
             </p>
-            {/* <p
+            <select
               className="Events-headerp"
-              onClick={() => sethighlightvalue("Filter")}
+              onClick={() => sethighlightvalue("")}
               id={highlightvalue === "Filter" ? "Events-selected" : ""}
             >
-              Filter
-            </p> */}
+              <option value="Location">Location</option>
+              <option value="Online">Online</option>
+            </select>
           </div>
           <div className="Events-searchbox">
             <input
