@@ -176,14 +176,29 @@ function SearchnFilter({ data, setdata }) {
             >
               Ended
             </p>
-            <select
-              className="Events-headerp"
-              onClick={() => sethighlightvalue("")}
-              id={highlightvalue === "Filter" ? "Events-selected" : ""}
-            >
-              <option value="Location">Location</option>
-              <option value="Online">Online</option>
-            </select>
+            <div className="location-filter">
+              <p style={{ fontWeight: "700", color: "black" }}>Location</p>
+              <p
+                className="lcfilters"
+                onClick={() => {
+                  sethighlightvalue("inPerson");
+                  changeFilter("inPerson");
+                }}
+                id={highlightvalue === "inPerson" ? "Events-selected" : ""}
+              >
+                In-Person
+              </p>
+              <p
+                className="lcfilters"
+                onClick={() => {
+                  sethighlightvalue("online");
+                  changeFilter("online");
+                }}
+                id={highlightvalue === "online" ? "Events-selected" : ""}
+              >
+                Online
+              </p>
+            </div>
           </div>
           <div className="Events-searchbox">
             <input
