@@ -13,8 +13,25 @@
     height: 2.5rem;
 
 }
-
-
+.SearchnFilter-select{
+    outline: none;
+   -webkit-appearance: none;
+   font: 14px "Open Sans", sans-serif;
+   cursor: pointer;
+   color: #3c434a;
+   border-color: #a6afb7;
+   padding: 8px 16px;
+   border-radius: 3px;
+   
+   background: #ffffff url("https://i.imgur.com/hRbauFc.png") no-repeat scroll right center;
+}
+select:hover,
+select:active {
+   border-color: #85929d;
+}
+#SearchnFilter-mobileLocation{
+color: white !important;
+}
 .location-filter{
     display: flex;
     align-items: center;
@@ -24,6 +41,7 @@
 .lcfilters{
     color: white;
     cursor: pointer;
+    margin-left: 0.5rem;
 }
 .SearchnFilter-maindiv{
     padding-left: 3rem;
@@ -36,8 +54,12 @@
     
     .Events-searchbox{
         width: 85%;
+        margin-top: 1.5rem;
     }
     .SearchnFilter-maindiv{
         padding-left: 0rem;
+    }
+    .SearchnFilter-select{
+        width: 85%;
     }
 }

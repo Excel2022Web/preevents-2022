@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import "./SearchnFilter.css";
 import Data from "../../data/events.json";
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 function SearchnFilter({ data, setdata }) {
   const [highlightvalue, sethighlightvalue] = useState();
   const [searchtxt, setsearchtxt] = useState("");
@@ -46,11 +48,12 @@ function SearchnFilter({ data, setdata }) {
         });
         break;
       case "inPerson":
-        newData = Data.filter((d)=> d.location==="In-Person")
+        newData = Data.filter((d) => d.location === "In-Person");
         break;
       case "online":
-        newData = Data.filter((d)=>d.location==="online")
+        newData = Data.filter((d) => d.location === "online");
         break;
+
       default:
         newData = [];
     }
@@ -118,7 +121,7 @@ function SearchnFilter({ data, setdata }) {
           >
             Ended
           </p>
-          <div className="location-filter">
+          <div className="location-filter  Events-headerp">
             <p style={{ fontWeight: "700", color: "black" }}>Location</p>
             <p
               className="lcfilters"
@@ -140,11 +143,23 @@ function SearchnFilter({ data, setdata }) {
             >
               Online
             </p>
+            
           </div>
+          <div  className="Events-headerp">
+             
+              <select className="SearchnFilter-select">
+              <option value="default">Sort by</option>
+                <option value="prize">Prize</option>
+                <option value="name">Name</option>
+                <option value="deadline">Registration Deadline</option>
+                <option value="startDate">Start Date</option>
+                <option value="endDate">End Date</option>
+              </select>
+            </div>
         </div>
       ) : (
         <div className="SearchnFilter-mobileview">
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex",justifyContent:"center",alignItems:"center" }}>
             <p
               className="Events-headerp"
               style={{ marginLeft: "0" }}
@@ -177,29 +192,31 @@ function SearchnFilter({ data, setdata }) {
               Ended
             </p>
             <div className="location-filter">
-              <p style={{ fontWeight: "700", color: "black" }}>Location</p>
-              <p
-                className="lcfilters"
-                onClick={() => {
-                  sethighlightvalue("inPerson");
-                  changeFilter("inPerson");
-                }}
-                id={highlightvalue === "inPerson" ? "Events-selected" : ""}
-              >
-                In-Person
-              </p>
-              <p
-                className="lcfilters"
-                onClick={() => {
-                  sethighlightvalue("online");
-                  changeFilter("online");
-                }}
-                id={highlightvalue === "online" ? "Events-selected" : ""}
-              >
+           
+            <NavDropdown
+              id="SearchnFilter-mobileLocation"
+              title="Location"
+              className="Events-headerp"
+              menuVariant="dark"
+              style={{color:"white",textDecoration:"none"}}
+            >
+              <NavDropdown.Item >In-person</NavDropdown.Item>
+              <NavDropdown.Item >
                 Online
-              </p>
+              </NavDropdown.Item>
+              
+            </NavDropdown>
+         
             </div>
           </div>
+          <select className="SearchnFilter-select">
+          <option value="default">Sort by</option>
+            <option value="prize">Prize</option>
+            <option value="name">Name</option>
+            <option value="deadline">Registration Deadline</option>
+            <option value="startDate">Start Date</option>
+            <option value="endDate">End Date</option>
+          </select>
           <div className="Events-searchbox">
             <input
               type="text"
@@ -210,7 +227,14 @@ function SearchnFilter({ data, setdata }) {
             ></input>
             <BsSearch></BsSearch>
           </div>
+          <div>
+          
+          
+       </div>
         </div>
+          
+        
+   
       )}
     </div>
   );
