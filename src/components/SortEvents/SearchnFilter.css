@@ -63,3 +63,20 @@ color: white !important;
         width: 85%;
     }
 }
+@media(max-width:1050px){
+    select{
+        padding: 0;
+        background: none;
+    }
+    
+    .Events-searchbox{
+        width: 60%;
+        margin-top: 1.5rem;
+    }
+    .SearchnFilter-maindiv{
+        padding-left: 0rem;
+    }
+    .SearchnFilter-select{
+        width: 60%;
+    }
+}

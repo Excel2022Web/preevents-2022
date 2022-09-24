@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import "./SearchnFilter.css";
 import Data from "../../data/events.json";
-import Nav from 'react-bootstrap/Nav';
+// import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 function SearchnFilter({ data, setdata }) {
   const [highlightvalue, sethighlightvalue] = useState();
   const [searchtxt, setsearchtxt] = useState("");
-  const [mobileView, setmobileView] = useState(window.innerWidth < 600);
+  const [mobileView, setmobileView] = useState(window.innerWidth < 1050);
 
   const updateMedia = () => {
-    setmobileView(window.innerWidth < 600);
+    setmobileView(window.innerWidth < 1050);
   };
 
   useEffect(() => {
@@ -59,6 +59,23 @@ function SearchnFilter({ data, setdata }) {
     }
     setdata(newData);
   };
+  let sortChange = (sortProperty)=>{
+    if (sortProperty === "prize") {
+            const sorted = [...Data].sort((a, b) => (parseInt(b[sortProperty]) > parseInt(a[sortProperty]) ? 1 : -1));
+            setdata(sorted);
+         } else if (sortProperty === "name") {
+            const sorted = [...Data].sort((a, b) => a[sortProperty].localeCompare(b[sortProperty]));
+            setdata(sorted);
+         } 
+          else if (sortProperty==="default"){
+            setdata(Data) 
+          }
+         else {
+            const sorted = [...Data].sort((a, b) => (b[sortProperty] < a[sortProperty] ? 1 : -1));
+            setdata(sorted);
+         }
+  }
+
   let handlesearch = (e) => {
     console.log(e.target.value);
     setsearchtxt(e.target.value);
@@ -147,7 +164,7 @@ function SearchnFilter({ data, setdata }) {
           </div>
           <div  className="Events-headerp">
              
-              <select className="SearchnFilter-select">
+              <select className="SearchnFilter-select" onChange={(e) => sortChange(e.target.value)}>
               <option value="default">Sort by</option>
                 <option value="prize">Prize</option>
                 <option value="name">Name</option>
@@ -209,7 +226,7 @@ function SearchnFilter({ data, setdata }) {
          
             </div>
           </div>
-          <select className="SearchnFilter-select">
+          <select className="SearchnFilter-select" onChange={(e)=> sortChange(e.target.value)}>
           <option value="default">Sort by</option>
             <option value="prize">Prize</option>
             <option value="name">Name</option>
