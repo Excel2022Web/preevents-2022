@@ -217,8 +217,14 @@ function SearchnFilter({ data, setdata }) {
               menuVariant="dark"
               style={{color:"white",textDecoration:"none"}}
             >
-              <NavDropdown.Item >In-person</NavDropdown.Item>
-              <NavDropdown.Item >
+              <NavDropdown.Item  onClick={() => {
+                sethighlightvalue("inPerson");
+                changeFilter("inPerson");
+              }}>In-person</NavDropdown.Item>
+              <NavDropdown.Item   onClick={() => {
+                sethighlightvalue("online");
+                changeFilter("online");
+              }}>
                 Online
               </NavDropdown.Item>
               
