@@ -1,32 +1,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap');
 
-.footer {
-
-    height: 70px;
-    background-color: #fff;
+#footer {
+    background: #03012C;
+  }
+  
+  .footer__main {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1.2rem;
-    gap: 0.5rem;
-}
-
-.footer_icons {
+    padding: 1rem 0;
+    flex-direction: column;
+  }
+  
+  .footer-social {
     display: flex;
-    gap: 0.8rem;
-}
-
-.socialmedia_icon {
-    font-size: 1.3rem;
-}
-
-span {
-    padding: 0px 5px;
-}
-
-.footer_desc > p {
-    margin-bottom: 0rem !important;
-    font-family: 'Poppins';
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2.5rem 0 1rem 0;
+  }
+  
+  .contact_social_icon {
+    font-size: 1.25rem;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .footer-social {
+      flex-direction: column;
+      gap: 3rem;
+    }
+  
+    .footer-social-socialmedia {
+      order: 2;
+    }
+    .footer-social-college {
+      order: 1;
+    }
+    .footer-social-event {
+      order: 3;
+    }
+  }
+  
+  .footer-social-socialmedia {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .footer-social-socialmedia a {
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    color: #ffff;
+    transition: all 0.2s ease-out;
+  }
+  
+  .footer-social-socialmedia a:hover {
+    transform: scale(1.25);
+  }
+  
+  .mec__logo {
+    width: 10rem;
+  }
+  .excel__logo {
+    width: 10rem;
+  }
+  
+  .footer-madewith {
+    color: #ffffff;
     font-size: 1rem;
-}
+    font-family: 'Poppins';
+  }
+  
+  .footer_heart {
+    margin: 0 0.25rem;
+    position: relative;
+    top: 3px;
+    color: #21b8cb;
+  }
