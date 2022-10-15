@@ -11,14 +11,14 @@ const Events = () => {
   
 
   return (
-    <div>
+    <div className="eve">
       <SearchnFilter data={data} setdata={setdata}></SearchnFilter>
       <div className="events">
         {data === [] ? (
           <p>No Data</p>
         ) : (
           data.map((itm) => {
-            return <Card {...itm} />;
+            return <Card key={itm.description} {...itm} />;
           })
         )}
       </div>

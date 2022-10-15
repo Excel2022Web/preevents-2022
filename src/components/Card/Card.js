@@ -7,15 +7,23 @@ import { IoIosTimer } from "react-icons/io";
 import { MdGroups } from "react-icons/md";
 import { BiCoinStack } from "react-icons/bi";
 
-function Card({ name, description, tags,teamSize,startDate,deadline,fees,endDate,length,img}) {
+function Card({
+  name,
+  description,
+  tags,
+  teamSize,
+  startDate,
+  deadline,
+  fees,
+  endDate,
+  length,
+  img,
+}) {
   return (
     <div className="card__outer">
       <div className="event__card">
         <div className="eventcard__image">
-          <img
-            src={img}
-            alt=" "
-          />
+          <img src={img} alt=" " />
         </div>
         <div className="eventcard__desc">
           <div className="eventcard__title">
@@ -38,7 +46,9 @@ function Card({ name, description, tags,teamSize,startDate,deadline,fees,endDate
         <div className="eventcard__details">
           <div className="event__detail">
             <FaRegCalendarAlt className="detail__icon" />
-            <p>{startDate}-{endDate}</p>
+            <p>
+              {startDate}-{endDate}
+            </p>
           </div>
           <div className="event__detail">
             <IoIosTimer className="detail__icon" />

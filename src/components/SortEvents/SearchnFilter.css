@@ -4,6 +4,9 @@
     align-items: center;
     margin-top: 2rem;
 }  
+.SearchnFilter-maindiv{
+    padding: 20px;
+}
 .Events-searchbox{
     background: rgba(255, 255, 255, 0.6);
     box-shadow: 5px 5px 4px rgb(0 0 0 / 25%);
@@ -15,7 +18,6 @@
 }
 .SearchnFilter-select{
     outline: none;
-   -webkit-appearance: none;
    font: 14px "Open Sans", sans-serif;
    cursor: pointer;
    color: #3c434a;

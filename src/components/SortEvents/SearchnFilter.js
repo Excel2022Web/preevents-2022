@@ -27,7 +27,7 @@ function SearchnFilter({ data, setdata }) {
           var currDate = new Date();
           return currDate < eventDate;
         });
-        console.log(newData);
+        // console.log(newData);
         break;
       case "Ongoing":
         newData = Data.filter((d) => {
@@ -59,22 +59,26 @@ function SearchnFilter({ data, setdata }) {
     }
     setdata(newData);
   };
-  let sortChange = (sortProperty)=>{
+  let sortChange = (sortProperty) => {
     if (sortProperty === "prize") {
-            const sorted = [...Data].sort((a, b) => (parseInt(b[sortProperty]) > parseInt(a[sortProperty]) ? 1 : -1));
-            setdata(sorted);
-         } else if (sortProperty === "name") {
-            const sorted = [...Data].sort((a, b) => a[sortProperty].localeCompare(b[sortProperty]));
-            setdata(sorted);
-         } 
-          else if (sortProperty==="default"){
-            setdata(Data) 
-          }
-         else {
-            const sorted = [...Data].sort((a, b) => (b[sortProperty] < a[sortProperty] ? 1 : -1));
-            setdata(sorted);
-         }
-  }
+      const sorted = [...Data].sort((a, b) =>
+        parseInt(b[sortProperty]) > parseInt(a[sortProperty]) ? 1 : -1
+      );
+      setdata(sorted);
+    } else if (sortProperty === "name") {
+      const sorted = [...Data].sort((a, b) =>
+        a[sortProperty].localeCompare(b[sortProperty])
+      );
+      setdata(sorted);
+    } else if (sortProperty === "default") {
+      setdata(Data);
+    } else {
+      const sorted = [...Data].sort((a, b) =>
+        b[sortProperty] < a[sortProperty] ? 1 : -1
+      );
+      setdata(sorted);
+    }
+  };
 
   let handlesearch = (e) => {
     console.log(e.target.value);
@@ -92,7 +96,7 @@ function SearchnFilter({ data, setdata }) {
     }
   };
 
-  console.log(highlightvalue);
+  // console.log(highlightvalue);
   return (
     <div className="SearchnFilter-maindiv">
       {mobileView === false ? (
@@ -160,23 +164,30 @@ function SearchnFilter({ data, setdata }) {
             >
               Online
             </p>
-            
           </div>
-          <div  className="Events-headerp">
-             
-              <select className="SearchnFilter-select" onChange={(e) => sortChange(e.target.value)}>
+          <div className="Events-headerp">
+            <select
+              className="SearchnFilter-select"
+              onChange={(e) => sortChange(e.target.value)}
+            >
               <option value="default">Sort by</option>
-                <option value="prize">Prize</option>
-                <option value="name">Name</option>
-                <option value="deadline">Registration Deadline</option>
-                <option value="startDate">Start Date</option>
-                <option value="endDate">End Date</option>
-              </select>
-            </div>
+              <option value="prize">Prize</option>
+              <option value="name">Name</option>
+              <option value="deadline">Registration Deadline</option>
+              <option value="startDate">Start Date</option>
+              <option value="endDate">End Date</option>
+            </select>
+          </div>
         </div>
       ) : (
         <div className="SearchnFilter-mobileview">
-          <div style={{ display: "flex",justifyContent:"center",alignItems:"center" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <p
               className="Events-headerp"
               style={{ marginLeft: "0" }}
@@ -209,31 +220,37 @@ function SearchnFilter({ data, setdata }) {
               Ended
             </p>
             <div className="location-filter">
-           
-            <NavDropdown
-              id="SearchnFilter-mobileLocation"
-              title="Location"
-              className="Events-headerp"
-              menuVariant="dark"
-              style={{color:"white",textDecoration:"none"}}
-            >
-              <NavDropdown.Item  onClick={() => {
-                sethighlightvalue("inPerson");
-                changeFilter("inPerson");
-              }}>In-person</NavDropdown.Item>
-              <NavDropdown.Item   onClick={() => {
-                sethighlightvalue("online");
-                changeFilter("online");
-              }}>
-                Online
-              </NavDropdown.Item>
-              
-            </NavDropdown>
-         
+              <NavDropdown
+                id="SearchnFilter-mobileLocation"
+                title="Location"
+                className="Events-headerp"
+                menuVariant="dark"
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                <NavDropdown.Item
+                  onClick={() => {
+                    sethighlightvalue("inPerson");
+                    changeFilter("inPerson");
+                  }}
+                >
+                  In-person
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  onClick={() => {
+                    sethighlightvalue("online");
+                    changeFilter("online");
+                  }}
+                >
+                  Online
+                </NavDropdown.Item>
+              </NavDropdown>
             </div>
           </div>
-          <select className="SearchnFilter-select" onChange={(e)=> sortChange(e.target.value)}>
-          <option value="default">Sort by</option>
+          <select
+            className="SearchnFilter-select"
+            onChange={(e) => sortChange(e.target.value)}
+          >
+            <option value="default">Sort by</option>
             <option value="prize">Prize</option>
             <option value="name">Name</option>
             <option value="deadline">Registration Deadline</option>
@@ -250,14 +267,8 @@ function SearchnFilter({ data, setdata }) {
             ></input>
             <BsSearch></BsSearch>
           </div>
-          <div>
-          
-          
-       </div>
+          <div></div>
         </div>
-          
-        
-   
       )}
     </div>
   );
