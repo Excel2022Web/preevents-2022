@@ -38,9 +38,3 @@ input.Events-serchbar:focus {
     border-bottom-style: inset;
 }
 
-@media screen and (max-width: 600px) {
-    .events {
-        padding: 1rem;
-    }
-}
-

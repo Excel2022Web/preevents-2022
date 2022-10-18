@@ -17,6 +17,7 @@
 
 }
 .SearchnFilter-select{
+    /*outline: none;*/
     outline: none;
    font: 14px "Open Sans", sans-serif;
    cursor: pointer;
@@ -24,8 +25,6 @@
    border-color: #a6afb7;
    padding: 8px 16px;
    border-radius: 3px;
-   
-   background: #ffffff url("https://i.imgur.com/hRbauFc.png") no-repeat scroll right center;
 }
 select:hover,
 select:active {

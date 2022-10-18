@@ -1,8 +1,6 @@
 import { Environment, PerspectiveCamera } from "@react-three/drei";
-// import { useFrame } from "@react-three/fiber";
-import React from "react";
-// import { useEffect } from "react";
-import { useThree } from "@react-three/fiber";
+import React, { useEffect } from "react";
+import { useFrame, useThree } from "@react-three/fiber";
 import { useRef } from "react";
 import { angleToRadians } from "../../utils/angle";
 import * as THREE from "three";
@@ -10,26 +8,12 @@ import { Text } from "@react-three/drei";
 // import gsap from "gsap";
 import { Logo } from "../Three/logo";
 import { Bubble } from "../Three/bubble";
-// import { useScrollPosition } from "../../hooks/useScrollPosition";
-// function Caption({ children }) {
-
-//   return (
-//     <Text
-//       position={[0, 1, 4.5]}
-//       lineHeight={1}
-//       font="/LeagueSpartan-Bold.ttf"
-//       fontSize={width / 32}
-//       material-toneMapped={false}
-//       anchorX="center"
-//       anchorY="middle"
-//     >
-//       {children}
-//     </Text>
-//   );
-// }
+import { Mascot } from "../Three/mascot";
 
 export default function Header({ setBody }) {
   const { width } = useThree((state) => state.viewport);
+  const dArrowRef = useRef();
+
   window.addEventListener("mousewheel", (e) => {
     if (!!camRef.current) {
       if (camRef.current.position.z <= 8) {
@@ -46,31 +30,8 @@ export default function Header({ setBody }) {
     }
   });
 
-  // const orbitControlRef = useRef(null);
-  // console.log(useScrollPosition());
-  // useFrame((state)=>{
-  //   if(!!orbitControlRef.current){
-  //     const {x,y}  =state.mouse;
-  //     orbitControlRef.current.setAzimuthalAngle(-x)
-  //     orbitControlRef.current.setPolarAngle(-y)
-  //     orbitControlRef.current.update()
-
-  //   }
-
-  // })
-  // useEffect(() => {
-  //   if (!!orbitControlRef.current) {
-  //     // orbitControlRef.current.enableDamping = false;
-  //     // orbitControlRef.current.enablePan = false;
-  //     // orbitControlRef.current.enableRotate = false;
-  //     // orbitControlRef.current.enableZoom = false;
-  //     // orbitControlRef.current.enabled = false;
-  //     console.log(orbitControlRef.current);
-  //   }
-  // }, [orbitControlRef.current]);
-
   const camRef = useRef(null);
-
+  const masRef = useRef();
   // useEffect(() => {
   //   if (!!ballRef.current) {
   //     gsap.to(ballRef.current.position, {
@@ -90,16 +51,26 @@ export default function Header({ setBody }) {
     <>
       <PerspectiveCamera makeDefault position={[0, 1, 8]} ref={camRef} />
       {/* <OrbitControls ref={orbitControlRef} /> */}
-      {/* <mesh position={[-2, 3, 0]} castShadow ref={ballRef}>
-        <sphereGeometry args={[1, 50, 50]} />
-        <meshStandardMaterial color="#ffffff" metalness={0.9} />
-      </mesh> */}
-      {/* car */}
-      <Logo />
 
+      <Logo />
+      <Mascot ref={masRef} />
       <Bubble />
       <Bubble />
       <Bubble />
+      <Bubble />
+      <Bubble />
+      <Bubble />
+      <Bubble />
+      <Bubble />
+      <Bubble />
+      <Bubble />
+      <Bubble />
+      <Bubble />
+      <Bubble />
+      <Bubble />
+      <Bubble />
+      <Bubble />
+
       <Text
         position={[0, 1, 4.5]}
         lineHeight={1}
@@ -112,20 +83,22 @@ export default function Header({ setBody }) {
         EXCEL 2022
       </Text>
       <Text
-        position={[0, 0, 4.5]}
+        ref={dArrowRef}
+        rotation={[0, 0, angleToRadians(180)]}
+        position={[0, 0.5, 4.5]}
         lineHeight={1}
         font="/LeagueSpartan-Bold.ttf"
-        fontSize={width / 100}
+        fontSize={width / 50}
         material-toneMapped={false}
         anchorX="center"
         anchorY="middle"
       >
-        Scroll Down
+        ^
       </Text>
-      {/* <mesh rotation={[-angleToRadians(90), 0, 0]} receiveShadow>
-        <planeGeometry args={[21, 21]} />
-        <meshStandardMaterial color="#217991" />
-      </mesh> */}
+      <mesh rotation={[-angleToRadians(90), 0, 0]} receiveShadow>
+        <planeGeometry args={[15, 15]} />
+        <meshStandardMaterial color="#09375d" />
+      </mesh>
       <ambientLight args={["#ffffff", 1]} />
       <spotLight
         args={["#ffffff", 1.5, 7, angleToRadians(45), 0.4]}
@@ -136,7 +109,7 @@ export default function Header({ setBody }) {
       <Environment background>
         <mesh>
           <sphereGeometry args={[50, 100, 100]} />
-          <meshBasicMaterial side={THREE.BackSide} color="#217994" />
+          <meshBasicMaterial side={THREE.BackSide} color="#09375d" />
         </mesh>
       </Environment>
     </>

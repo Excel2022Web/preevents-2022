@@ -5,13 +5,13 @@ import { useFrame } from "@react-three/fiber";
 export function Bubble(props) {
   const { nodes, materials } = useGLTF("/bubble .gltf");
   const bRef = useRef();
-  const offset = (Math.random() - 0.5) / 80 + 0.005;
+  const offset = Math.random() / 80 - 0.001;
   const x = (Math.random() - 0.5) * 10;
   const y = (Math.random() - 0.5) * 10;
   const z = (Math.random() - 0.5) * 10;
   useFrame((state) => {
     if (!!bRef.current) {
-      bRef.current.position.x += offset;
+      // bRef.current.position.x += offset;
       bRef.current.position.y += offset;
       bRef.current.position.z += offset;
     }
